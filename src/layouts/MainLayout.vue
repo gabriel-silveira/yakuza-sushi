@@ -4,7 +4,9 @@
       class="bg-black"
       elevated
     >
-      <q-toolbar>
+      <q-toolbar
+        class="bg-dark"
+      >
         <q-btn
           flat
           dense
@@ -15,19 +17,23 @@
         />
 
         <q-toolbar-title>
-          <img
+          LOGO SOMENTE TIPOGRAFIA
+          <!--<img
             alt="Quasar logo"
             height="100"
             src="~assets/imgs/logo-yakuza.png"
-          >
+          >-->
         </q-toolbar-title>
 
-        <q-tabs v-model="tab" shrink>
-          <q-tab name="tab1" label="Home" />
-          <q-tab name="tab2" label="Combinados" />
-          <q-tab name="tab3" label="Duplas" />
-          <q-tab name="tab4" label="Makisushis" />
-          <q-tab name="tab5" label="Especialidades quentes" />
+        <q-tabs
+          v-model="tab"
+          shrink
+        >
+          <q-tab name="combos" label="Combinados" />
+          <q-tab name="duplas" label="Duplas" />
+          <q-tab name="makis" label="Makisushis" />
+          <q-tab name="quentes" label="Especialidades quentes" />
+          <q-tab name="bebidas" label="Bebidas" />
         </q-tabs>
       </q-toolbar>
     </q-header>
@@ -51,7 +57,7 @@ export default {
   name: 'MainLayout',
 
   data: () => ({
-    tab: 'tab1',
+    tab: '',
     leftDrawerOpen: false
   })
 }
