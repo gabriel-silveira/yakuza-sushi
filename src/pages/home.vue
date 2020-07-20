@@ -1,44 +1,52 @@
 <template>
   <q-page class="flex q-pa-none">
     <div class="full-width">
-      <div class="logo-home">
+      <div class="logo-home text-center">
         <img
           src="~assets/imgs/logo-yakuza-transp.png"
         />
-        <div class="phones">
-            <p>(11) 2372-5893</p>
-            <p>(11) 94575-0784</p>
-            <p class="text-caption">Vila Mariana, Saúde e Aclimação</p>
-        </div>
       </div>
+
       <q-carousel
         v-model="slide"
-        :autoplay="autoplay"
-        :fullscreen="true"
+        :autoplay="false"
+        class="full-height"
         animated
         infinite
         arrows
+        control-type="push"
         transition-prev="slide-right"
         transition-next="slide-left"
-        @mouseenter="autoplay = false"
-        @mouseleave="autoplay = true"
       >
         <q-carousel-slide
           name="banner-1"
           class="column no-wrap flex-center q-pa-none banner-1"
         >
           <div class="bg-fume" />
-          <div class="carousel-content">
-            <h2 class="q-mb-md">Combinados</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper, arcu quis porta blandit, nibh mauris aliquet purus, nec dapibus est massa eu.</p>
+          <div class="carousel-content text-center">
+            <h3 class="q-mb-sm text-yellow">Delivery</h3>
+            <p>Em tempos de pandemia, a <span class="text-primary">Yakuza Sushi</span> vai até você</p>
+            <q-btn
+              class="q-mt-sm"
+              color="yellow"
+              label="Faça seu pedido"
+              outline
+              @click="$router.push({ name: 'delivery' })"
+            />
           </div>
         </q-carousel-slide>
+
         <q-carousel-slide
           name="banner-2"
           class="column no-wrap flex-center q-pa-none banner-2"
         >
           <div class="bg-fume" />
+          <div class="carousel-content text-center">
+            <h3 class="q-mb-md text-yellow">Higiene</h3>
+            <p>Estamos levando nossos pratos até você com a máxima higienização e segurança na entrega!</p>
+          </div>
         </q-carousel-slide>
+
         <q-carousel-slide
           name="banner-3"
           class="column no-wrap flex-center q-pa-none banner-3"
@@ -68,15 +76,15 @@ export default {
   z-index: 99999;
   position: absolute;
   width: 1000px;
-  height: 100%;
+  height: auto;
+  top: 0;
   left: 50%;
-  padding: 100px 0;
+  padding-top: 50px;
   margin-left: -500px;
 }
 
 .logo-home > img {
   height: 160px;
-  margin-left: -20px;
 }
 
 .banner-1 {
@@ -98,7 +106,7 @@ export default {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.8));
 }
 
 .carousel-content {
@@ -108,25 +116,12 @@ export default {
   left: 50%;
   top: 50%;
   padding: 0px 0px;
-  margin-top: -200px;
+  margin-top: -130px;
   margin-left: -500px;
-}
-
-.carousel-content h2 {
-  color: #FA3;
 }
 
 .carousel-content p {
   font-size: 24px;
   font-weight: 300;
-}
-
-.phones {
-  float: right;
-  margin-top: 50px;
-  font-size: 24px;
-  font-weight: 300;
-  text-align: right;
-  line-height: 22px;
 }
 </style>
