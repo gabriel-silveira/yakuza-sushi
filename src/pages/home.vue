@@ -31,7 +31,7 @@
               color="yellow"
               label="Faça seu pedido"
               outline
-              @click="$router.push({ name: 'delivery' })"
+              @click="$router.push({ name: ROUTES.DELIVERY })"
             />
           </div>
         </q-carousel-slide>
@@ -43,7 +43,7 @@
           <div class="bg-fume" />
           <div class="carousel-content text-center">
             <h3 class="q-mb-md text-yellow">Higiene</h3>
-            <p>Estamos levando nossos pratos até você com a máxima higienização e segurança na entrega!</p>
+            <p>Estamos levando nossos pratos até você com a<br/> máxima higienização e segurança na entrega!</p>
           </div>
         </q-carousel-slide>
 
@@ -52,6 +52,11 @@
           class="column no-wrap flex-center q-pa-none banner-3"
         >
           <div class="bg-fume" />
+          <div class="carousel-content text-center">
+            <h3 class="q-mb-none text-yellow">O MELHOR</h3>
+            <p>DELIVERY DE SUSHI de toda região!</p>
+            <p class="text-yellow">Entregamos 24h por dia, todos os dias da semana</p>
+          </div>
         </q-carousel-slide>
       </q-carousel>
     </div>
@@ -59,15 +64,21 @@
 </template>
 
 <script>
+import ROUTES from 'src/constants/routes'
+
 export default {
   name: 'PageIndex',
   meta: {
     title: 'Yakuza Sushi'
   },
   data: () => ({
+    ROUTES,
     slide: 'banner-1',
     autoplay: true
-  })
+  }),
+  mounted () {
+    this.$root.$emit('set-page-title', '')
+  }
 }
 </script>
 
