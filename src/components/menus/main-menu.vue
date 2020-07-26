@@ -2,17 +2,15 @@
   <div
     class="q-gutter-sm row"
   >
-    <q-btn
-      v-if="$route.name !== 'home'"
-      glossy
+    <img
+      class="q-ml-lg q-mr-lg q-mt-md q-mb-sm cursor-pointer"
+      style="height:50px"
+      src="~assets/imgs/logo-yakuza-transp-header.png"
       @click="$router.push({ name: ROUTES.HOME })"
-    >
-      <q-icon class="q-mr-sm" size="24px" name="las la-home" />
-      <div>Início</div>
-    </q-btn>
+    />
 
     <q-btn
-      glossy
+      flat
     >
       <q-icon class="q-mr-sm" size="24px" name="las la-list" />
       <div>Cardápio</div>
@@ -20,7 +18,7 @@
       <q-menu
         content-class="bg-secondary"
         transition-show="jump-down"
-          transition-hide="jump-up"
+        transition-hide="jump-up"
         auto-close
       >
         <q-list style="min-width: 100px">
@@ -54,7 +52,7 @@
     </q-btn>
 
     <q-btn
-      glossy
+      flat
       @click="$router.push({ name: ROUTES.SCHEDULE })"
     >
       <q-icon class="q-mr-sm" size="24px" name="las la-clock" />
@@ -62,7 +60,7 @@
     </q-btn>
 
     <q-btn
-      glossy
+      flat
       @click="$router.push({ name: ROUTES.DELIVERY })"
     >
       <q-icon class="q-mr-sm" size="24px" name="las la-motorcycle" />
