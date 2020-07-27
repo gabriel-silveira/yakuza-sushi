@@ -5,7 +5,7 @@
     <img
       class="q-ml-lg q-mr-lg q-mt-md q-mb-sm cursor-pointer"
       style="height:50px"
-      src="~assets/imgs/logo-yakuza-transp-header.png"
+      src="/imgs/logo-yakuza-transp-header.png"
       @click="$router.push({ name: ROUTES.HOME })"
     />
 

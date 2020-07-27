@@ -1,8 +1,15 @@
 <template>
-  <q-card class="my-card">
-    <q-img src="https://mundozumm.com.br/wp-content/uploads/2019/01/barca-de-comida-japonesa-em-casa.jpg" />
+  <q-card
+    v-if="productData.id"
+    class="my-card"
+  >
+    <q-img
+      :src="getProductImage(productData.id)"
+      spinner-color="white"
+    />
     <q-card-section>
       <q-btn
+        v-if="canAddToOrder"
         fab
         padding="none"
         color="positive"
@@ -10,20 +17,15 @@
         class="absolute"
         style="top: 0; right: 12px; transform: translateY(-50%);"
         @click="addItem(productData.name)"
-      />
+      >
+        <q-tooltip>Adicionar ao pedido</q-tooltip>
+      </q-btn>
 
       <div class="row no-wrap items-center">
-        <div class="col text-h6 ellipsis">
+        <div class="col text-h6 text-yellow">
           {{ productData.name }}
         </div>
       </div>
-
-      <q-rating
-        v-model="stars"
-        :max="5"
-        size="18px"
-        @input="sendReview"
-      />
     </q-card-section>
 
     <q-card-section class="q-pt-none">
@@ -37,8 +39,23 @@
 
     <q-separator inset />
 
-    <q-card-actions class="q-pl-md">
-      {{ productData.price }}
+    <q-card-actions
+      class="q-pl-md"
+      align="right"
+    >
+      <div class="absolute" style="left:16px">
+        {{ productData.price }}
+      </div>
+
+      <q-rating
+        v-if="canReview"
+        v-model="stars"
+        :max="5"
+        size="18px"
+        @input="sendReview"
+      >
+        <q-tooltip>Adicionar ao pedido</q-tooltip>
+      </q-rating>
     </q-card-actions>
   </q-card>
 </template>
@@ -50,6 +67,14 @@ export default {
     productData: {
       type: Object,
       default: () => ({})
+    },
+    canAddToOrder: {
+      type: Boolean,
+      default: false
+    },
+    canReview: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -70,6 +95,9 @@ export default {
         icon: 'las la-shopping-cart',
         color: 'secondary'
       })
+    },
+    getProductImage (prodId) {
+      return `/imgs/cardapio/${prodId}.png`
     }
   }
 }

@@ -3,7 +3,7 @@
     <div class="full-width">
       <div class="logo-home text-center">
         <img
-          src="~assets/imgs/logo-yakuza-transp.png"
+          src="/imgs/logo-yakuza-transp.png"
         />
       </div>
 
@@ -99,15 +99,15 @@ export default {
 }
 
 .banner-1 {
-  background: url('~assets/imgs/slider/banner-1.jpg');
+  background: url('/imgs/slider/banner-1.jpg');
   background-size: cover;
 }
 .banner-2 {
-  background: url('~assets/imgs/slider/banner-2.jpg');
+  background: url('/imgs/slider/banner-2.jpg');
   background-size: cover;
 }
 .banner-3 {
-  background: url('~assets/imgs/slider/banner-3.jpg');
+  background: url('/imgs/slider/banner-3.jpg');
   background-size: cover;
 }
 
