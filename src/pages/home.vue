@@ -90,7 +90,7 @@ export default {
   height: auto;
   top: 0;
   left: 50%;
-  padding-top: 50px;
+  padding-top: 130px;
   margin-left: -500px;
 }
 
@@ -99,7 +99,7 @@ export default {
 }
 
 .banner-1 {
-  background: url('/imgs/slider/banner-1.jpg');
+  background: url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&w=1000&q=80');
   background-size: cover;
 }
 .banner-2 {

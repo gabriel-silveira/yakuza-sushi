@@ -33,8 +33,17 @@
         >
           Vila Mariana, Aclimação e Região
         </div>
-        <div>
-          (11) 2372-5893 / 94575-0784
+        <div class="q-pr-sm text-h6">
+          <i class="las la-phone"></i>
+        </div>
+        <div class="q-pr-md text-h6">
+          2372-5893
+        </div>
+        <div class="q-pr-sm text-h6">
+          <i class="lab la-whatsapp"></i>
+        </div>
+        <div class="q-pr-xs text-h6">
+          94575-0784
         </div>
       </q-toolbar>
     </q-header>

@@ -2,9 +2,11 @@
   <q-card
     v-if="productData.id"
     class="my-card"
+    style="background: #171717"
   >
     <q-img
       :src="getProductImage(productData.id)"
+      :ratio="16/9"
       spinner-color="white"
     />
     <q-card-section>

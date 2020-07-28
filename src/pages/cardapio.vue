@@ -1,13 +1,17 @@
 <template>
-  <q-page class="flex q-pa-none">
+  <q-page
+    class="flex q-pa-none"
+  >
     <q-splitter
       v-model="splitterModel"
       class="full-width"
+      separator-class="bg-grey-9"
     >
       <template v-slot:before>
         <q-tabs
           v-model="tab"
           vertical
+          class="text-left"
         >
           <q-tab
             v-for="category of categories"
@@ -33,7 +37,7 @@
             :key="`tab-${category.id}`"
             :name="`tab-${category.id}`"
           >
-            <div class="text-h4 q-mb-md">{{ category.name }}</div>
+            <h4 class="q-ma-none q-pb-md text-yellow">{{ category.name }}</h4>
             <div class="row q-col-gutter-lg">
               <div
                 v-for="product of products[category.id]"
@@ -60,7 +64,7 @@ import products from 'src/services/products'
 export default {
   name: 'CardapioPage',
   components: {
-    ProductCard: () => import('src/components/menus/product-card')
+    ProductCard: () => import('src/components/cards/product-card')
   },
   data: () => ({
     canAddToOrder: true,
@@ -71,12 +75,15 @@ export default {
     categories: products.categories
   }),
   mounted () {
-    this.$root.$emit('set-page-title', 'Cardapio')
+    this.$root.$emit('set-page-title', '')
   }
 }
 </script>
 
 <style>
+.q-tab {
+  justify-content: left;
+}
 .q-btn--fab.q-btn__wrapper {
   padding: 0 !important;
 }
