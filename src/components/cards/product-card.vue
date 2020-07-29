@@ -7,7 +7,7 @@
     <q-img
       :src="getProductImage(productData.id)"
       :ratio="16/9"
-      spinner-color="white"
+      spinner-color="grey"
     />
     <q-card-section>
       <q-btn

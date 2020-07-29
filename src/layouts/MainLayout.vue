@@ -16,6 +16,7 @@
         />
         <main-menu
           v-else
+          @show-horario-dialog="horarioDialog = !horarioDialog"
         />
 
         <q-toolbar-title class="text-center">
@@ -59,11 +60,51 @@
 
     <q-page-container>
       <router-view />
+
+      <q-dialog
+        v-model="horarioDialog"
+      >
+        <q-card
+          style="width: 400px"
+          class="q-pb-md"
+        >
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">Horários de funcionamento</div>
+            <q-space />
+            <q-btn icon="close" flat round dense v-close-popup />
+          </q-card-section>
+
+          <q-card-section
+            v-for="unit of units"
+            :key="unit.id"
+            class="q-ml-md q-mr-md q-mt-md q-pb-xs"
+            rounded
+            style="border-top:1px solid rgba(255,255,255,0.1)"
+          >
+            <h5 class="q-ma-none text-yellow">{{ unit.name }}</h5>
+            <p
+              v-if="unit.address"
+              class="text-caption q-ma-none"
+            >
+              {{ unit.address }}
+            </p>
+            <p
+              v-for="oh of unit.openingHours"
+              :key="oh.text"
+              class="q-pa-none q-mt-xs q-mb-xs"
+            >
+              {{ oh.text }}
+            </p>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
+import units from 'src/services/units'
+
 export default {
   name: 'MainLayout',
 
@@ -76,6 +117,8 @@ export default {
   },
 
   data: () => ({
+    horarioDialog: false,
+    units: units,
     pageTitle: '',
     tab: '',
     tabs: [

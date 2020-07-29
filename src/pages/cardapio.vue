@@ -11,7 +11,8 @@
         <q-tabs
           v-model="tab"
           vertical
-          class="text-left"
+          class="text-left bg-black"
+          active-color="yellow"
         >
           <q-tab
             v-for="category of categories"
@@ -36,8 +37,9 @@
             v-for="category of categories"
             :key="`tab-${category.id}`"
             :name="`tab-${category.id}`"
+            class="q-pt-sm"
           >
-            <h4 class="q-ma-none q-pb-md text-yellow">{{ category.name }}</h4>
+            <h4 class="q-ma-none q-pa-none q-mb-sm text-yellow">{{ category.name }}</h4>
             <div class="row q-col-gutter-lg">
               <div
                 v-for="product of products[category.id]"

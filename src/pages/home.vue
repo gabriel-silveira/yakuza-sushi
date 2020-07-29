@@ -31,7 +31,7 @@
               color="yellow"
               label="Faça seu pedido"
               outline
-              @click="$router.push({ name: ROUTES.DELIVERY })"
+              @click="$router.push({ name: ROUTES.MENU })"
             />
           </div>
         </q-carousel-slide>
