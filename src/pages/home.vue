@@ -84,7 +84,7 @@ export default {
 
 <style>
 .logo-home {
-  z-index: 99999;
+  z-index: 1;
   position: absolute;
   width: 1000px;
   height: auto;

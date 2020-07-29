@@ -65,14 +65,6 @@
 
       <q-btn
         flat
-        @click="$router.push({ name: ROUTES.DELIVERY })"
-      >
-        <q-icon class="q-mr-sm" size="24px" name="las la-motorcycle" />
-        <div>Delivery</div>
-      </q-btn>
-
-      <q-btn
-        flat
         @click="$router.push({ name: ROUTES.LOCATION })"
       >
         <q-icon class="q-mr-sm" size="24px" name="las la-map-marker" />
