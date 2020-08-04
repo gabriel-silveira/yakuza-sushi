@@ -2,7 +2,26 @@
   <q-page
     class="flex q-pa-none"
   >
+    <div
+      v-if="$q.platform.is.mobile"
+      class="bg-dark q-pa-md full-width"
+    >
+      <h4 class="q-ma-none q-pa-none q-mb-sm text-yellow">{{ currentCatIdFromPath.name }}</h4>
+      <div
+        v-for="product of products[currentCatIdFromPath.id]"
+        :key="`product-${product.id}`"
+        class="q-mb-lg"
+      >
+        <product-card
+          :product-data="product"
+          :cat-id="currentCatIdFromPath.id"
+          :can-add-to-order="canAddToOrder"
+          :can-review="canReview"
+        />
+      </div>
+    </div>
     <q-splitter
+      v-else
       v-model="splitterModel"
       class="full-width"
       separator-class="bg-grey-9"
@@ -81,6 +100,12 @@ export default {
     products,
     categories
   }),
+  computed: {
+    currentCatIdFromPath () {
+      console.log(this.categories)
+      return this.categories.find((category) => category.path === this.$route.params.categoryPath)
+    }
+  },
   beforeMount () {
     this.tab = this.$route.params.categoryPath
   },

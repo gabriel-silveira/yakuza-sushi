@@ -2,26 +2,34 @@
   <q-layout view="lHh Lpr lFf">
     <q-header>
       <q-toolbar
-        class="bg-secondary"
+        v-if="isMobile"
       >
         <q-btn
-          v-if="$q.platform.is.mobile"
-          color="yellow"
           flat
-          dense
           round
           icon="menu"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
         />
+        <q-toolbar-title class="text-center">
+          <img
+            src="/imgs/logo-yakuza-transp-header.png"
+            style="width:90px;height:30px;margin-top:11px"
+            @click="$router.push({ name: ROUTES.HOME })"
+          />
+        </q-toolbar-title>
+        <div style="width: 40px" />
+      </q-toolbar>
+
+      <q-toolbar
+        v-else
+        class="bg-secondary"
+      >
         <main-menu
-          v-else
           @show-horario-dialog="horarioDialog = !horarioDialog"
         />
 
-        <q-toolbar-title class="text-center">
-          <h3 class="text-yellow q-ma-none q-pt-sm q-pb-xs">{{ pageTitle }}</h3>
-        </q-toolbar-title>
+        <q-toolbar-title class="text-center" />
 
         <div
           class="q-mr-md"
@@ -34,28 +42,42 @@
         >
           Vila Mariana, Aclimação e Região
         </div>
-        <div class="q-pr-sm text-h6">
+        <div
+          class="q-pr-sm text-h6"
+        >
           <i class="las la-phone"></i>
         </div>
-        <div class="q-pr-md text-h6">
+        <div
+          class="q-pr-md text-h6"
+        >
           2372-5893
         </div>
-        <div class="q-pr-sm text-h6">
+        <div
+          class="q-pr-sm text-h6"
+        >
           <i class="lab la-whatsapp"></i>
         </div>
-        <div class="q-pr-xs text-h6">
+        <div
+          class="q-pr-xs text-h6"
+        >
           94575-0784
         </div>
       </q-toolbar>
+      <div
+        v-if="isMobile"
+        class="bg-dark q-pl-md q-pt-sm q-pb-sm text-body1 text-center"
+      >
+        Delivery 24h - <i class="las la-phone"></i> 2372-5893 - <i class="lab la-whatsapp"></i> 94575-0784
+      </div>
     </q-header>
 
     <q-drawer
       v-if="$q.platform.is.mobile"
       v-model="leftDrawerOpen"
       show-if-above
-      content-class="bg-secondary"
+      class="bg-secondary"
     >
-      Main menu mobile
+      <main-menu-mobile />
     </q-drawer>
 
     <q-page-container>
@@ -111,6 +133,7 @@
 
 <script>
 import units from 'src/services/units'
+import ROUTES from 'src/constants/routes'
 
 export default {
   name: 'MainLayout',
@@ -120,10 +143,12 @@ export default {
   },
 
   components: {
-    MainMenu: () => import('src/components/menus/main-menu')
+    MainMenu: () => import('src/components/menus/main-menu'),
+    MainMenuMobile: () => import('src/components/menus/main-menu-mobile')
   },
 
   data: () => ({
+    ROUTES,
     horarioDialog: false,
     units: units,
     pageTitle: '',
@@ -156,6 +181,13 @@ export default {
     ],
     leftDrawerOpen: false
   }),
+
+  computed: {
+    isMobile () {
+      return this.$q.platform.is.mobile
+    }
+  },
+
   beforeMount () {
     this.$root.$on('set-page-title', (title) => { this.pageTitle = title })
   }

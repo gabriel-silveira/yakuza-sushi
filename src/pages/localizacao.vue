@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="bg-primary" style="position:absolute;width:100%;height:100%;">
+    <div class="gradient-page" style="position:absolute;width:100%;height:100%;">
       <div class="row" style="height:120px">
         <div class="col-6 q-pa-md">
           <h4 class="text-yellow q-mt-none q-mb-sm">Unidade Manuel de Paiva</h4>
@@ -34,3 +34,9 @@ export default {
   })
 }
 </script>
+
+<style>
+  .gradient-page {
+    background: linear-gradient(180deg, rgba(128,0,0,1) 35%, rgba(255,96,0,1) 100%) !important;
+  }
+</style>

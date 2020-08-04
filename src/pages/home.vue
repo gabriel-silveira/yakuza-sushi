@@ -1,13 +1,17 @@
 <template>
   <q-page class="flex q-pa-none">
     <div class="full-width">
-      <div class="logo-home text-center">
+      <div
+        v-if="!$q.platform.is.mobile"
+        class="logo-home text-center"
+      >
         <img
           src="/imgs/logo-yakuza-transp.png"
         />
       </div>
 
       <q-carousel
+        v-if="!$q.platform.is.mobile"
         v-model="slide"
         :autoplay="true"
         class="full-height"
@@ -25,13 +29,13 @@
           <div class="bg-fume" />
           <div class="carousel-content text-center">
             <h3 class="q-mb-sm text-yellow">Delivery</h3>
-            <p>Em tempos de pandemia, a <span class="text-primary">Yakuza Sushi</span> vai até você</p>
+            <p>Em tempos de pandemia, <br v-if="$q.platform.is.mobile" />a <span class="text-primary">Yakuza Sushi</span> vai até você</p>
             <q-btn
               class="q-mt-sm"
               color="yellow"
               label="Faça seu pedido"
               outline
-              @click="$router.push({ name: ROUTES.MENU })"
+              @click="$router.push({ name: ROUTES.MENU, params: { categoryPath: categories[0].path } })"
             />
           </div>
         </q-carousel-slide>
@@ -43,7 +47,7 @@
           <div class="bg-fume" />
           <div class="carousel-content text-center">
             <h3 class="q-mb-md text-yellow">Higiene</h3>
-            <p>Estamos levando nossos pratos até você com a<br/> máxima higienização e segurança na entrega!</p>
+            <p>Estamos levando nossos <br v-if="$q.platform.is.mobile" />pratos até você com a<br/> máxima higienização <br v-if="$q.platform.is.mobile" />e segurança na entrega!</p>
           </div>
         </q-carousel-slide>
 
@@ -54,8 +58,8 @@
           <div class="bg-fume" />
           <div class="carousel-content text-center">
             <h3 class="q-mb-none text-yellow">O MELHOR</h3>
-            <p>DELIVERY DE SUSHI de toda região!</p>
-            <p class="text-yellow">Entregamos 24h por dia, todos os dias da semana</p>
+            <p>DELIVERY DE SUSHI <br v-if="$q.platform.is.mobile" />de toda região!</p>
+            <p class="text-yellow">Entregamos 24h por dia, <br v-if="$q.platform.is.mobile" />todos os dias da semana</p>
           </div>
         </q-carousel-slide>
       </q-carousel>
@@ -64,6 +68,7 @@
 </template>
 
 <script>
+import categories from 'src/services/categories'
 import ROUTES from 'src/constants/routes'
 
 export default {
@@ -74,11 +79,9 @@ export default {
   data: () => ({
     ROUTES,
     slide: 'banner-1',
-    autoplay: true
-  }),
-  mounted () {
-    this.$root.$emit('set-page-title', '')
-  }
+    autoplay: true,
+    categories
+  })
 }
 </script>
 
@@ -134,5 +137,22 @@ export default {
 .carousel-content p {
   font-size: 24px;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo-home {
+    z-index: 1;
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    padding-top: 80px;
+    margin-left: -500px;
+  }
+
+  .logo-home > img {
+    height: 120px;
+  }
 }
 </style>
