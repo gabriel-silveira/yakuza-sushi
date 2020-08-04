@@ -287,7 +287,7 @@ export default {
       },
       {
         id: 5,
-        name: 'Chicken Kartu',
+        name: 'Chicken Katsu',
         description: 'Frango empanado com molho agridoce',
         quantity: 'Para 1 pessoa',
         price: 'R$ 17,90',
