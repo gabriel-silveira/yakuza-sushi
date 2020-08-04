@@ -259,7 +259,47 @@ export default {
         description: 'Macarrão com carne bovina, frango e legumes',
         quantity: 'Para 1 pessoa',
         price: 'R$ 22,90',
-        rate: 3
+        rate: 5
+      },
+      {
+        id: 2,
+        name: 'Yakissoba Especial',
+        description: 'Macarrão com carne bovina, frango, frutos do mar e legumes',
+        quantity: 'Para 1 pessoa',
+        price: 'R$ 36,90',
+        rate: 5
+      },
+      {
+        id: 3,
+        name: 'Yakissoba Vegetariano',
+        description: 'Macarrão com shimeji e legumes',
+        quantity: 'Para 1 pessoa',
+        price: 'R$ 19,90',
+        rate: 4
+      },
+      {
+        id: 4,
+        name: 'Yakissoba Camarão',
+        description: 'Macarrão com camarão e legumes',
+        quantity: 'Para 1 pessoa',
+        price: 'R$ 41,90',
+        rate: 5
+      },
+      {
+        id: 5,
+        name: 'Chicken Kartu',
+        description: 'Frango empanado com molho agridoce',
+        quantity: 'Para 1 pessoa',
+        price: 'R$ 17,90',
+        rate: 4
+      },
+      {
+        id: 6,
+        name: 'Missoshiro',
+        description: 'Sopa de missô',
+        quantity: 'Para 1 pessoa',
+        price: 'R$ 2,90',
+        rate: 4
       }
     ],
     5: [
@@ -286,6 +326,130 @@ export default {
         quantity: 'Para 1 pessoa',
         price: 'R$ 53,90',
         rate: 3
+      }
+    ],
+    6: [
+      {
+        id: 1,
+        name: 'Refrigerantes em lata',
+        description: 'Lata 350ml',
+        quantity: '',
+        price: 'R$ 6,90',
+        rate: 5
+      },
+      {
+        id: 2,
+        name: 'Schweppes Citrus',
+        description: 'Lata 350ml',
+        quantity: '',
+        price: 'R$ 7,60',
+        rate: 5
+      },
+      {
+        id: 3,
+        name: 'Água',
+        description: 'Garrafa 350ml',
+        quantity: '',
+        price: 'R$ 5,60',
+        rate: 5
+      },
+      {
+        id: 4,
+        name: 'Sucos',
+        description: 'Copo 350ml',
+        quantity: '',
+        price: 'R$ 7,50',
+        rate: 5
+      },
+      {
+        id: 5,
+        name: 'Sucos mistos',
+        description: 'Copo 350ml',
+        quantity: '',
+        price: 'R$ 8,60',
+        rate: 5
+      },
+      {
+        id: 6,
+        name: 'Limonada Suíça',
+        description: 'Copo 350ml',
+        quantity: '',
+        price: 'R$ 8,90',
+        rate: 5
+      },
+      {
+        id: 7,
+        name: 'Ban Chá',
+        description: 'Copo 200ml',
+        quantity: '',
+        price: 'R$ 5,70',
+        rate: 5
+      },
+      {
+        id: 8,
+        name: 'H2OH!',
+        description: 'Garrafa 500ml',
+        quantity: '',
+        price: 'R$ 7,60',
+        rate: 5
+      },
+      {
+        id: 9,
+        name: 'Chá gelado - Feel Good!',
+        description: 'Lata 350ml',
+        quantity: '',
+        price: 'R$ 7,40',
+        rate: 5
+      },
+      {
+        id: 10,
+        name: 'Budweiser',
+        description: 'Long neck',
+        quantity: '',
+        price: 'R$ 9,00',
+        rate: 5
+      },
+      {
+        id: 11,
+        name: 'Stella Artois, Heineken ou Corona',
+        description: 'Long neck',
+        quantity: '',
+        price: 'R$ 10,00',
+        rate: 5
+      },
+      {
+        id: 12,
+        name: 'Original - 600ml',
+        description: '600ml',
+        quantity: '',
+        price: 'R$ 13,00',
+        rate: 5
+      },
+      {
+        id: 13,
+        name: 'Skol - 600ml',
+        description: '600ml',
+        quantity: '',
+        price: 'R$ 12,00',
+        rate: 5
+      },
+      {
+        id: 14,
+        name: 'Heineken - 600ml',
+        description: '600ml',
+        quantity: '',
+        price: 'R$ 15,00',
+        rate: 5
+      }
+    ],
+    7: [
+      {
+        id: 1,
+        name: 'Ródizio Especial',
+        description: 'Com lula, polvo e camarão',
+        quantity: 'Almoço e jantar - Todos os dias',
+        price: 'R$ 66,90',
+        rate: 5
       }
     ]
   }

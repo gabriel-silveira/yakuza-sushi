@@ -1,7 +1,7 @@
 <template>
   <q-card
     v-if="productData.id"
-    class="my-card"
+    class="my-card full-height q-pb-xl"
     style="background: #171717"
   >
     <q-img
@@ -33,17 +33,15 @@
 
     <q-card-section class="q-pt-none">
       <div class="text-subtitle1">
-        {{ productData.quantity }}
+        {{ productData.description }}
       </div>
       <div class="text-caption text-grey">
-        {{ productData.description }}
+        {{ productData.quantity }}
       </div>
     </q-card-section>
 
-    <q-separator inset />
-
     <q-card-actions
-      class="q-pl-md q-pt-md q-pb-md"
+      class="absolute-bottom q-pl-md q-pt-md q-pb-md bg-grey-10"
       align="right"
     >
       <div class="absolute text-body1" style="left:16px">
@@ -86,7 +84,9 @@ export default {
     }
   },
   methods: {
-    sendReview () {
+    sendReview (rate) {
+      this.productData.rate = rate
+
       this.$q.notify({
         message: 'Avaliação enviada. Muito obrigado!',
         icon: 'las la-star',
