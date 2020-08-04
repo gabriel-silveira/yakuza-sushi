@@ -48,6 +48,7 @@
               >
                 <product-card
                   :product-data="product"
+                  :cat-id="category.id"
                   :can-add-to-order="canAddToOrder"
                   :can-review="canReview"
                 />

@@ -26,7 +26,7 @@
 
       <div class="row no-wrap items-center">
         <div class="col text-h6 text-yellow">
-          {{ productData.name }}
+          {{ productData.id }}. {{ productData.name }}
         </div>
       </div>
     </q-card-section>
@@ -69,6 +69,10 @@ export default {
       type: Object,
       default: () => ({})
     },
+    catId: {
+      type: Number,
+      default: 0
+    },
     canAddToOrder: {
       type: Boolean,
       default: false
@@ -102,7 +106,8 @@ export default {
       })
     },
     getProductImage (prodId) {
-      return `/imgs/cardapio/${prodId}.png`
+      console.log(`/imgs/cardapio/${this.catId}-${prodId}.png`)
+      return `/imgs/cardapio/${this.catId}-${prodId}.png`
     }
   }
 }
