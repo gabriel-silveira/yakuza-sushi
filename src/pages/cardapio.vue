@@ -17,7 +17,7 @@
           <q-tab
             v-for="category of categories"
             :key="`tab-${category.id}`"
-            :name="`tab-${category.id}`"
+            :name="`${category.path}`"
             :label="category.name"
           />
         </q-tabs>
@@ -36,7 +36,7 @@
           <q-tab-panel
             v-for="category of categories"
             :key="`tab-${category.id}`"
-            :name="`tab-${category.id}`"
+            :name="`${category.path}`"
             class="q-pt-sm"
           >
             <h4 class="q-ma-none q-pa-none q-mb-sm text-yellow">{{ category.name }}</h4>
@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import categories from 'src/services/categories'
 import products from 'src/services/products'
 
 export default {
@@ -75,11 +76,14 @@ export default {
   data: () => ({
     canAddToOrder: true,
     canReview: true,
-    tab: 'tab-1',
+    tab: '',
     splitterModel: 14,
-    products: products.products,
-    categories: products.categories
+    products,
+    categories
   }),
+  beforeMount () {
+    this.tab = this.$route.params.categoryPath
+  },
   mounted () {
     this.$root.$emit('set-page-title', '')
   }

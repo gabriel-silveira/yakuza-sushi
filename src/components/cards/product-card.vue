@@ -26,7 +26,7 @@
 
       <div class="row no-wrap items-center">
         <div class="col text-h6 text-yellow">
-          {{ productData.id }}. {{ productData.name }}
+          {{ productData.name }}
         </div>
       </div>
     </q-card-section>
@@ -53,6 +53,7 @@
         v-model="stars"
         :max="5"
         size="18px"
+        color="positive"
         @input="sendReview"
       >
         <q-tooltip>Adicionar ao pedido</q-tooltip>

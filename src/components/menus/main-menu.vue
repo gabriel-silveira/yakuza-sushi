@@ -14,6 +14,7 @@
       :class="$route.name !== ROUTES.HOME ? 'q-mt-md' : ''"
     >
       <q-btn
+        v-if="$route.name !== ROUTES.MENU"
         flat
       >
         <q-icon class="q-mr-sm" size="24px" name="las la-list" />
@@ -27,16 +28,12 @@
         >
           <q-list style="min-width: 100px">
             <q-item
-              @click="$router.push({ name: ROUTES.MENU })"
+              v-for="category of categories"
+              :key="`tab-${category.id}`"
               clickable
+              @click="goCategory(category.path)"
             >
-              <q-item-section>Combinados</q-item-section>
-            </q-item>
-            <q-separator dark />
-            <q-item
-              clickable
-            >
-              <q-item-section>Rodízio especial</q-item-section>
+              <q-item-section>{{ category.name }}</q-item-section>
             </q-item>
           </q-list>
         </q-menu>
@@ -62,12 +59,24 @@
 </template>
 
 <script>
+import categories from 'src/services/categories'
 import ROUTES from 'src/constants/routes'
 
 export default {
   name: 'MainMenuComponent',
   data: () => ({
-    ROUTES
-  })
+    ROUTES,
+    categories
+  }),
+  methods: {
+    goCategory (categoryPath) {
+      this.$router.push({
+        name: ROUTES.MENU,
+        params: {
+          categoryPath
+        }
+      })
+    }
+  }
 }
 </script>
