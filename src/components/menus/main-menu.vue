@@ -32,19 +32,6 @@
             >
               <q-item-section>Combinados</q-item-section>
             </q-item>
-            <q-item clickable>
-              <q-item-section>Duplas</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section>Makisushis</q-item-section>
-            </q-item>
-            <q-item clickable>
-              <q-item-section>Almoço e Jantar</q-item-section>
-            </q-item>
-            <q-separator dark />
-            <q-item clickable>
-              <q-item-section>Bebidas</q-item-section>
-            </q-item>
             <q-separator dark />
             <q-item
               clickable

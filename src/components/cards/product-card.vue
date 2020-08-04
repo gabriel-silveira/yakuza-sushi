@@ -12,12 +12,13 @@
     <q-card-section>
       <q-btn
         v-if="canAddToOrder"
-        fab
-        padding="none"
-        color="positive"
+        round
+        color="green-7"
+        text-color="white"
         icon="las la-cart-arrow-down"
         class="absolute"
-        style="top: 0; right: 12px; transform: translateY(-50%);"
+        style="top: 0; right: 12px; transform: translateY(-50%); font-size: 16px; padding: 0px !important;"
+        dense
         @click="addItem(productData.name)"
       >
         <q-tooltip>Adicionar ao pedido</q-tooltip>
@@ -42,10 +43,10 @@
     <q-separator inset />
 
     <q-card-actions
-      class="q-pl-md"
+      class="q-pl-md q-pt-md q-pb-md"
       align="right"
     >
-      <div class="absolute" style="left:16px">
+      <div class="absolute text-body1" style="left:16px">
         {{ productData.price }}
       </div>
 
@@ -79,9 +80,11 @@ export default {
       default: false
     }
   },
-  data: () => ({
-    stars: 4
-  }),
+  computed: {
+    stars () {
+      return this.productData.rate
+    }
+  },
   methods: {
     sendReview () {
       this.$q.notify({
@@ -95,7 +98,7 @@ export default {
         message: 'Item adicionado ao pedido',
         caption: productName,
         icon: 'las la-shopping-cart',
-        color: 'secondary'
+        color: 'positive'
       })
     },
     getProductImage (prodId) {

@@ -11,8 +11,8 @@ export default [
   },
   {
     id: 2,
-    name: 'Unidade Vergueiro',
-    address: 'Rua Vergueiro, 2552 - Vila Mariana',
+    name: 'Unidade Manuel de Paiva',
+    address: 'Rua Manuel de Paiva, 173 - Vila Mariana',
     openingHours: [
       {
         text: 'Segunda a Sexta - 12:00 às 01:00'
@@ -24,8 +24,8 @@ export default [
   },
   {
     id: 3,
-    name: 'Unidade Manuel de Paiva',
-    address: 'Rua Manuel de Paiva, 173 - Vila Mariana',
+    name: 'Unidade Vergueiro',
+    address: 'Rua Vergueiro, 2552 - Vila Mariana',
     openingHours: [
       {
         text: 'Segunda a Sexta - 12:00 às 01:00'

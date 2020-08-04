@@ -65,6 +65,9 @@ import products from 'src/services/products'
 
 export default {
   name: 'CardapioPage',
+  meta: {
+    title: 'Cardápio - Yakuza Sushi'
+  },
   components: {
     ProductCard: () => import('src/components/cards/product-card')
   },
@@ -72,7 +75,7 @@ export default {
     canAddToOrder: true,
     canReview: true,
     tab: 'tab-1',
-    splitterModel: 10,
+    splitterModel: 14,
     products: products.products,
     categories: products.categories
   }),

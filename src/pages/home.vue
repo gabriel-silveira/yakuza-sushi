@@ -9,7 +9,7 @@
 
       <q-carousel
         v-model="slide"
-        :autoplay="false"
+        :autoplay="true"
         class="full-height"
         animated
         infinite
@@ -90,7 +90,7 @@ export default {
   height: auto;
   top: 0;
   left: 50%;
-  padding-top: 130px;
+  padding-top: 110px;
   margin-left: -500px;
 }
 

@@ -65,7 +65,7 @@
         v-model="horarioDialog"
       >
         <q-card
-          style="width: 400px"
+          style="width: 450px"
           class="q-pb-md"
         >
           <q-card-section class="row items-center q-pb-none">
@@ -84,7 +84,7 @@
             <h5 class="q-ma-none text-yellow">{{ unit.name }}</h5>
             <p
               v-if="unit.address"
-              class="text-caption q-ma-none"
+              class="text-caption q-ma-none q-pb-sm"
             >
               {{ unit.address }}
             </p>
@@ -93,7 +93,14 @@
               :key="oh.text"
               class="q-pa-none q-mt-xs q-mb-xs"
             >
-              {{ oh.text }}
+              <q-avatar
+                class="q-pl-none q-ml-none q-mr-sm"
+                text-color="white"
+                icon="las la-angle-right"
+                size="24px"
+                style="width:auto"
+                flat
+              />{{ oh.text }}
             </p>
           </q-card-section>
         </q-card>
