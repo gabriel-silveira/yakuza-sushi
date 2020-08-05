@@ -3,6 +3,7 @@
     <q-header>
       <q-toolbar
         v-if="isMobile"
+        class="bg-secondary"
       >
         <q-btn
           flat
@@ -65,7 +66,7 @@
       </q-toolbar>
       <div
         v-if="isMobile"
-        class="bg-dark q-pl-md q-pt-sm q-pb-sm text-body1 text-center"
+        class="bg-black q-pl-md q-pt-sm q-pb-sm text-body1 text-center"
       >
         Delivery 24h - <i class="las la-phone"></i> 2372-5893 - <i class="lab la-whatsapp"></i> 94575-0784
       </div>
@@ -77,7 +78,9 @@
       show-if-above
       class="bg-secondary"
     >
-      <main-menu-mobile />
+      <main-menu-mobile
+        @show-horario-dialog="showHorarioMobile"
+      />
     </q-drawer>
 
     <q-page-container>
@@ -190,6 +193,13 @@ export default {
 
   beforeMount () {
     this.$root.$on('set-page-title', (title) => { this.pageTitle = title })
+  },
+
+  methods: {
+    showHorarioMobile () {
+      this.horarioDialog = !this.horarioDialog
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    }
   }
 }
 </script>

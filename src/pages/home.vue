@@ -11,7 +11,6 @@
       </div>
 
       <q-carousel
-        v-if="!$q.platform.is.mobile"
         v-model="slide"
         :autoplay="true"
         class="full-height"
@@ -130,7 +129,7 @@ export default {
   left: 50%;
   top: 50%;
   padding: 0px 0px;
-  margin-top: -130px;
+  margin-top: -150px;
   margin-left: -500px;
 }
 
@@ -153,6 +152,11 @@ export default {
 
   .logo-home > img {
     height: 120px;
+  }
+
+  .carousel-content p {
+    font-size: 20px;
+    font-weight: 300;
   }
 }
 </style>

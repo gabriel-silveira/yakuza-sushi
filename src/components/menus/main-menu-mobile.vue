@@ -31,6 +31,7 @@
     <q-item
       clickable
       v-ripple
+      @click="showHorarios"
     >
       <q-item-section avatar>
         <q-icon name="las la-clock" />
@@ -68,6 +69,9 @@ export default {
           categoryPath
         }
       })
+    },
+    showHorarios () {
+      this.$emit('show-horario-dialog')
     }
   }
 }
