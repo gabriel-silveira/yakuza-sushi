@@ -1,3 +1,3 @@
-# Quasar App (yakuza)
+# Projeto
 
 Yakuza Sushi Website
